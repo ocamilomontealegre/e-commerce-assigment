@@ -8,4 +8,7 @@ export default defineConfig({
     host: 'localhost'
   },
   plugins: [react()],
+  build: {
+    outDir: 'dist', 
+  },
 })
