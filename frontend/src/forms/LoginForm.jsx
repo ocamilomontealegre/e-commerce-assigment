@@ -21,7 +21,7 @@ function LoginForm() {
     try {
       const { email, password } = formData;
 
-      const apiUrl = 'https://localhost:3000/login';
+      const apiUrl = 'https://e-commerce-assignment.onrender.com/login';
 
       const response = await axios.post(apiUrl, { email, password });
 

@@ -20,7 +20,7 @@ function RegistrationForm() {
     try {
       const { email, password } = formData;
 
-      const apiUrl = 'https://localhost:3000/register';
+      const apiUrl = 'https://e-commerce-assignment.onrender.com/register';
       
       const response = await axios.post(apiUrl, { email, password });
       

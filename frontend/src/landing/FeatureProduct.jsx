@@ -9,7 +9,7 @@ function FeatureProduct() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = 'https://localhost:3000/products';
+        const apiUrl = 'https://e-commerce-assignment.onrender.com/products';
         const response = await axios.get(apiUrl);
         setProducts(response.data.products);
       } catch (error) {

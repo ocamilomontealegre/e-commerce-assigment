@@ -11,7 +11,7 @@ const CartSummary = () => {
   const getTotalPrice = () => cartItems.reduce((total, item) => total + item.price, 0);
 
   const handleCheckout = async () => {
-    const apiUrl = 'https://localhost:3000/registerTransaction';
+    const apiUrl = 'https://e-commerce-assignment.onrender.com/registerTransaction';
     const token = localStorage.getItem('token');
 
     if (!token) {
