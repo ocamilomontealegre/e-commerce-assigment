@@ -26,7 +26,7 @@ function RegistrationForm() {
       
       console.log('Registration successful:', response.data);
       
-      history.push('/products');
+      history.push('/login');
     } catch (error) {
       console.error('Registration failed:', error.response.data);
     }
