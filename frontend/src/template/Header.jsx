@@ -1,16 +1,13 @@
-// Import necessary dependencies and components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CartSummary from "../cart/CartSummary.jsx";
 import { useCart } from "../cart/CartContext.jsx";
 
-// Create a functional component for the navigation links
 function NavigationLinks({ cartCount, changeNav, openedDrawer, cartItems }) {
   const [tokenExists, setTokenExists] = useState(false);
 
   useEffect(() => {
-    // Check if localStorage.token exists
     const token = localStorage.getItem('token');
     setTokenExists(!!token);
   }, []);
@@ -53,7 +50,6 @@ function NavigationLinks({ cartCount, changeNav, openedDrawer, cartItems }) {
   );
 }
 
-// Create a functional component for the mobile buttons
 function MobileButtons({ cartCount, toggleDrawer }) {
   return (
     <div className="d-inline-block d-lg-none">
@@ -68,7 +64,6 @@ function MobileButtons({ cartCount, toggleDrawer }) {
   );
 }
 
-// Create the Header component
 function Header() {
   const [openedDrawer, setOpenedDrawer] = useState(false);
   const { cartCount, cartItems } = useCart();
@@ -87,18 +82,16 @@ function Header() {
     <header>
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white border-bottom">
         <div className="container-fluid">
-          {/* Brand and Logo */}
+
           <Link className="navbar-brand" to="/" onClick={changeNav}>
             <FontAwesomeIcon icon={["fas", "shoe-prints"]} className="ms-1" size="lg" />
             <span className="ms-2 h5">My E-commerce</span>
           </Link>
 
-          {/* Navigation Links */}
           <div className={"navbar-collapse offcanvas-collapse " + (openedDrawer ? "open" : "")}>
             <NavigationLinks cartCount={cartCount} changeNav={changeNav} openedDrawer={openedDrawer} cartItems={cartItems} />
           </div>
 
-          {/* Mobile Buttons */}
           <MobileButtons cartCount={cartCount} toggleDrawer={toggleDrawer} />
         </div>
       </nav>
